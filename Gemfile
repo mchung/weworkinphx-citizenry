@@ -11,9 +11,10 @@ gem "rails-i18n"
 #     export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
 #
 # Note: the exact path to your MySQL lib/ directory may vary.
-gem "mysql2", "~> 0.3.2"
+# gem "mysql2", "~> 0.3.2"
 # Uncomment if you"re using sqlite
 # gem "sqlite3-ruby", :require => "sqlite3"
+gem 'pg'
 
 group :assets do
   gem "sass-rails", "~> 3.2.3"
@@ -23,6 +24,7 @@ group :assets do
 end
 
 gem "hoptoad_notifier"
+gem "foreman"
 
 #--[ Utility ]------------------------------------------------------------------
 gem "httparty", "~> 0.8.0"
@@ -50,7 +52,7 @@ gem "omniauth-twitter"
 
 #--[ Search ]-------------------------------------------------------------------
 # If you"re using the default sql-based search, you can comment this out.
-gem "thinking-sphinx", "~> 2.0.1", :require => "thinking_sphinx"
+# gem "thinking-sphinx", "~> 2.0.1", :require => "thinking_sphinx"
 
 #--[ Model ]--------------------------------------------------------------------
 gem "paperclip", "~> 2.3"
@@ -64,6 +66,8 @@ gem "paper_trail", "~> 2"
 gem "paper_trail_manager"
 # gem "paper_trail_manager", :git => "git://github.com/igal/paper_trail_manager.git"
 # gem "paper_trail_manager", :path => "../paper_trail_manager"
+
+gem 'aws-sdk'
 
 #--[ View ]---------------------------------------------------------------------
 gem "haml", "~> 3.1.2"
@@ -113,4 +117,8 @@ group :test do
   gem "launchy"
   gem "database_cleaner"
   gem "spork"
+end
+
+group :production do
+  gem 'unicorn'
 end

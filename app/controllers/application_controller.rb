@@ -30,7 +30,8 @@ class ApplicationController < ActionController::Base
     seed = session["#{controller_name}_random_sort_seed"] ||= rand(2147483647)
     direction = %w(asc desc).include?(params[:order]) ? params[:order].upcase : ''
 
-    if ActiveRecord::Base.configurations[Rails.env]['adapter'] == 'sqlite3' || ActiveRecord::Base.configurations[Rails.env]['adapter'] == 'postgresql'
+    ar_adapter = Rails.configuration.database_configuration[Rails.env]['adapter']
+    if ar_adapter == 'sqlite3' || ar_adapter == 'postgresql'
       "RANDOM() #{direction}"
     else
       "RAND(#{seed}) #{direction}"

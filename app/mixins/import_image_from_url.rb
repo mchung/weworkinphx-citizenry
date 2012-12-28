@@ -41,8 +41,16 @@ module ImportImageFromURL
         :timeout_seconds => opts[:timeout_seconds] || 10,
       }
 
+      paperclip_options = {
+        :styles => leaf[:thumbnail_styles],
+        :storage => :s3,
+        :s3_credentials => { :access_key_id => SETTINGS['s3_key'], :secret_access_key => SETTINGS['s3_secret']},
+        :path => ":attachment/:id/:style.:extension",
+        :bucket => SETTINGS['s3_bucket']
+      }
+
       # Activate PaperClip attachment on field
-      self.has_attached_file(field, :styles => leaf[:thumbnail_styles])
+      self.has_attached_file(field, paperclip_options)
 
       # Validate size of attachment
       self.validates_attachment_size(field, :less_than => leaf[:maximum_size])
