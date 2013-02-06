@@ -50,6 +50,8 @@ gem "omniauth-twitter"
 # gem "omniauth-google-apps"
 # gem "omniauth-yahoo"
 
+gem "honeybadger"
+
 #--[ Search ]-------------------------------------------------------------------
 # If you"re using the default sql-based search, you can comment this out.
 # gem "thinking-sphinx", "~> 2.0.1", :require => "thinking_sphinx"
