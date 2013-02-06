@@ -51,6 +51,7 @@ gem "omniauth-twitter"
 # gem "omniauth-yahoo"
 
 gem "honeybadger"
+gem "newrelic_rpm"
 
 #--[ Search ]-------------------------------------------------------------------
 # If you"re using the default sql-based search, you can comment this out.
