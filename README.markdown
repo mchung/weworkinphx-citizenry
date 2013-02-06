@@ -1,20 +1,8 @@
-Citizenry
-=========
+# We Work in Phx
 
-Citizenry is a simple, friendly web application for communities to keep track of the people, companies, groups, and projects that make them great. It was built to power <http://epdx.org/>, a guide to the awesome tech community of Portland, Oregon.
+Citizenry is a simple, friendly wiki-like web application for communities to keep track of the people, companies, groups, and projects that make them great.
 
-Installation
-------------
+The [mchung/weworkinphx-citizenry](http://github.com/mchung/weworkinphx-citizenry) branch of Citizeny was built to power [We Work In Phx](http://www.weworkinphx.com), a guide to the awesome tech community of Phoenix, Arizona.
 
-Please read the `INSTALL.md` file for installation instructions.
+Originally forked from: [reidab/citizenry](http://github.com/reidab/citizenry)
 
-Colophon
---------
-
-League Gothic from the Leage of Movable Type
-http://www.theleagueofmoveabletype.com/fonts/7-league-gothic
-
-Build status
-------------
-
-[![Build Status](http://travis-ci.org/reidab/citizenry.png)](http://travis-ci.org/reidab/citizenry)
