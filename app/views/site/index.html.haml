@@ -3,10 +3,10 @@
 
 %ul#front_nav
   %h2#home_to= t('site.index.home_to')
-  %li.people= link_to semantic_pluralize(Person.count, t('site.index.person')), people_path
-  %li.companies= link_to semantic_pluralize(Company.count, t('site.index.company')), companies_path
-  %li.groups= link_to semantic_pluralize(Group.count, t('site.index.group')), groups_path
-  %li.projects= link_to semantic_pluralize(Project.count, t('site.index.project_or_product'), t('site.index.projects_and_products')), projects_path
-  %li.resources= link_to semantic_pluralize(ResourceLink.count, t('site.index.resource')), resource_links_path
+  %li.people= link_to semantic_pluralize(@count["person"], t('site.index.person')), people_path
+  %li.companies= link_to semantic_pluralize(@count["company"], t('site.index.company')), companies_path
+  %li.groups= link_to semantic_pluralize(@count["group"], t('site.index.group')), groups_path
+  %li.projects= link_to semantic_pluralize(@count["project"], t('site.index.project_or_product'), t('site.index.projects_and_products')), projects_path
+  %li.resources= link_to semantic_pluralize(@count["resource_link"], t('site.index.resource')), resource_links_path
   - if @events_count
     %li.events= link_to semantic_pluralize(@events_count, t('site.index.upcoming_event')) + t('site.index.on_calagator'), 'http://calagator.org/events'

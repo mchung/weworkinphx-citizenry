@@ -71,6 +71,7 @@ gem "paper_trail_manager"
 # gem "paper_trail_manager", :path => "../paper_trail_manager"
 
 gem 'aws-sdk'
+gem 'dalli'
 
 #--[ View ]---------------------------------------------------------------------
 gem "haml", "~> 3.1.2"

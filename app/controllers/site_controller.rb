@@ -3,7 +3,15 @@ class SiteController < ApplicationController
 
   def index
     page_title false
-
+    @count = Rails.cache.fetch('Counts.all', :expires_in => 1.minute) {
+      {
+        "person" => Person.count,
+        "company" => Company.count,
+        "group" => Group.count,
+        "project" => Project.count,
+        "resource_link" => ResourceLink.count
+      }
+    }
     events_count_path = 'tmp/calagator_events_count'
     if File.exists?(events_count_path)
       @events_count = File.read(events_count_path).to_i

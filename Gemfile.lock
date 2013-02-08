@@ -84,6 +84,7 @@ GEM
       compass (>= 0.10.0)
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
+    dalli (2.6.2)
     database_cleaner (0.9.1)
     devise (1.4.9)
       bcrypt-ruby (~> 3.0)
@@ -334,6 +335,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   compass-960-plugin (~> 0.10.4)
   compass-rails
+  dalli
   database_cleaner
   devise (~> 1.4.5)
   drx
