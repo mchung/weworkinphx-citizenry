@@ -42,13 +42,14 @@ gem "net-dns", "~> 0.6.1", :require => "net/dns/resolver"
 
 # Client libraries for authenticated services
 gem "omniauth-github"
-gem "omniauth-openid"
+# gem "omniauth-openid"
 gem "omniauth-twitter"
-# gem "omniauth-linkedin"
-# gem "omniauth-facebook"
+gem "omniauth-linkedin"
+gem "omniauth-facebook"
 # gem "omniauth-foursquare"
 # gem "omniauth-google-apps"
 # gem "omniauth-yahoo"
+# gem "omniauth-google_oauth2"
 
 gem "honeybadger"
 gem "newrelic_rpm"
