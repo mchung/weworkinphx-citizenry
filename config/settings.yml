@@ -28,28 +28,33 @@ common:
   # ssl_ca_path: "/etc/ssl/certs"
   google_analytics_id: <%= ENV['GOOGLE_ANALYTICS_ID'] %>
   hoptoad: seekrit!
-  secret_token: c63463de2c67e13400b5ee30329a12e6d95df8e7a24112c4420ceb0b540829cdcfa48cd1d54d9dff3cc89c552013cf9f5aab7dd2539291d9355bc2069367bafe
-  session_cookie_key: _your_app_session
+  secret_token: <%= ENV['RAILS_SECRET_TOKEN'] %>
+  session_cookie_key: _weworkinphx_session
   organization:
-    name: Washington Row
+    name: We Work in Phoenix
     city: Phoenix
     state: Arizona
-    url: http://washingtonrow.com
+    url: http://weworkinphx.com
     twitter: washingtonrow
-    email: marc@openphoenix.org
-    host: Washington Row
-    host_url: http://washingtonrow.com
-    logotype: <span>washington</span>row
+    email: hello@eekostudio.com
+    host: Eeko Studio
+    host_url: http://weworkinphx.com
+    # logotype: <img src="/images/washington-row.png" width="55"/>
+    logotype: <span>weworkin</span>phx
   mailer:
     # delivery specific settings should be set in environment configs below
     # (you don't want to send out real emails in tests, do you?)
     default_from: contact@domain.localhost
   search: sql
   mentoring: false # enables experimental mentor matching features
-
+  maps: true
+  gmap_api_key: <%= ENV['GMAP_API_KEY'] %>
 development:
   providers:
     - twitter
+    # - google_oauth2
+    - facebook
+    - linkedin
     - github
   auth_credentials:
     twitter:
@@ -86,6 +91,28 @@ test:
     - open_id
 
 production:
+  providers:
+    - twitter
+    - github
+    # - google_oauth2
+    - facebook
+    - linkedin
+  auth_credentials:
+    twitter:
+      key: <%= ENV['TWITTER_KEY'] %>
+      secret: <%= ENV['TWITTER_SECRET'] %>
+    github:
+      key: <%= ENV['GITHUB_KEY'] %>
+      secret: <%= ENV['GITHUB_SECRET'] %>
+    # google_oauth2:
+    #   key: <%= ENV['GOOGLE_KEY'] %>
+    #   secret: <%= ENV['GOOGLE_SECRET'] %>
+    facebook:
+      key: <%= ENV['FACEBOOK_KEY'] %>
+      secret: <%= ENV['FACEBOOK_SECRET'] %>
+    linkedin:
+      key: <%= ENV['LINKEDIN_KEY'] %>
+      secret: <%= ENV['LINKEDIN_SECRET'] %>
   s3_key: <%= ENV['S3_KEY'] %>
   s3_secret: <%= ENV['S3_SECRET'] %>
   s3_bucket: <%= ENV['S3_BUCKET'] %>
