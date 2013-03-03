@@ -36,7 +36,6 @@ module ImportImageFromURL
         :thumbnail_styles => opts[:thumbnail_styles] || { :medium => '220x220#', :thumb => '48x48#' },
         :gravatar => opts[:gravatar].nil? ? false : opts[:gravatar],
         :gravatar_sizes => opts[:gravatar_sizes] || { :medium => 220, :thumb => 48 },
-        :url => opts[:url] || '/system/:attachment/:id/:style/:safe_filename',
         :maximum_size => opts[:maximum_size] || 1000.kilobytes,
         :timeout_seconds => opts[:timeout_seconds] || 10,
       }
@@ -44,8 +43,11 @@ module ImportImageFromURL
       paperclip_options = {
         :styles => leaf[:thumbnail_styles],
         :storage => :s3,
-        :s3_credentials => { :access_key_id => SETTINGS['s3_key'], :secret_access_key => SETTINGS['s3_secret']},
-        :path => ":attachment/:id/:style.:extension",
+        :s3_credentials => {
+          :access_key_id => SETTINGS['s3_key'],
+          :secret_access_key => SETTINGS['s3_secret']
+        },
+        :path => "/:class/:attachment/:id/:style.:extension",
         :bucket => SETTINGS['s3_bucket']
       }
 

@@ -84,6 +84,9 @@ test:
   providers:
     - twitter
     - open_id
+  s3_key: '123456789'
+  s3_secret: 'zxcvbnm'
+  s3_bucket: 'bucket-test'
 
 production:
   s3_key: <%= ENV['S3_KEY'] %>
